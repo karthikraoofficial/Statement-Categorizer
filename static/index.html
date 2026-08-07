@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Statement categoriser — loop trace</title>
+<style>
+  :root {
+    --paper: #F2F0EB; --ink: #191B18; --rule: #C8C5BC; --dim: #6C6960;
+    --pass: #2C6A4E; --fail: #8A392A;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 2.5rem 1.25rem 5rem; background: var(--paper); color: var(--ink);
+         font: 14px/1.55 ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+  main { max-width: 780px; margin: 0 auto; }
+  h1 { font-size: 1.05rem; font-weight: 600; margin: 0 0 .25rem; }
+  h2 { font-size: .8rem; font-weight: 600; color: var(--dim); text-transform: uppercase;
+       letter-spacing: .08em; margin: 3rem 0 1rem; }
+  .sub { color: var(--dim); margin: 0 0 2rem; }
+  button { padding: .6rem 1.4rem; font: inherit; background: var(--ink); color: var(--paper);
+           border: 0; border-radius: 2px; cursor: pointer; }
+  button:disabled { opacity: .45; cursor: default; }
+  input { width: 100%; padding: .55rem .7rem; font: inherit; background: #FAF9F6;
+          border: 1px solid var(--rule); border-radius: 2px; color: var(--ink); }
+  input:focus, button:focus { outline: 2px solid var(--ink); outline-offset: 1px; }
+
+  .step { border-top: 1px solid var(--rule); padding: 1rem 0;
+          display: grid; grid-template-columns: 2.5rem 1fr; gap: .9rem; }
+  .n { color: var(--dim); font-size: 12px; padding-top: .15rem; }
+  .bar { height: 6px; background: #DEDBD2; border-radius: 3px; overflow: hidden; margin: .4rem 0 .5rem; }
+  .bar span { display: block; height: 100%; background: var(--ink); transition: width .4s ease; }
+  .acc { font-size: 15px; }
+  .misses { font-size: 12px; color: var(--fail); margin-top: .3rem; }
+  .misses ul { margin: .2rem 0 0; padding-left: 1.1rem; }
+  .cost { color: var(--dim); font-size: 11px; margin-top: .4rem; }
+  .total { border-top: 2px solid var(--ink); padding-top: .9rem; margin-top: .5rem; }
+  .total.ok { color: var(--pass); }
+  .try { display: flex; gap: .6rem; }
+  .try input { flex: 1; }
+  #answer { margin-top: .8rem; font-size: 15px; }
+  #answer small { color: var(--dim); font-size: 11px; display: block; margin-top: .2rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Statement categoriser</h1>
+  <p class="sub">The loop writes a rulebook. Watch accuracy climb, then use the rulebook for free.</p>
+
+  <button id="go">Run the loop</button>
+  <div id="out"></div>
+
+  <h2>Try the rulebook</h2>
+  <div class="try">
+    <input id="narration" placeholder="POS SWIGGY INSTAMART BENGALURU">
+    <button id="check">Categorise</button>
+  </div>
+  <div id="answer"></div>
+</main>
+
+<script>
+const esc = s => String(s).replace(/[&<>]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+const out = document.getElementById("out"), go = document.getElementById("go");
+
+go.onclick = async () => {
+  go.disabled = true;
+  out.innerHTML = '<div class="step"><div class="n">··</div><div>Running…</div></div>';
+  try {
+    const res = await fetch("/run", { method: "POST" });
+    if (!res.ok) throw new Error("Server returned " + res.status);
+    render(await res.json());
+  } catch (err) {
+    out.innerHTML = `<div class="step"><div class="n">!!</div><div class="misses">${esc(err.message)}
+      — check the server is running and ANTHROPIC_API_KEY is set.</div></div>`;
+  }
+  go.disabled = false;
+};
+
+function render(d) {
+  const steps = d.trace.map(s => s.error ? `
+    <div class="step"><div class="n">${String(s.step).padStart(2,"0")}</div>
+      <div class="misses">${esc(s.error)}</div></div>` : `
+    <div class="step">
+      <div class="n">${String(s.step).padStart(2,"0")}</div>
+      <div>
+        <div class="acc">${(s.accuracy*100).toFixed(0)}% · ${s.rule_count} rules</div>
+        <div class="bar"><span style="width:${s.accuracy*100}%"></span></div>
+        ${s.wrong.length ? `<div class="misses">Still wrong:<ul>${
+          s.wrong.map(w => `<li>${esc(w.narration)} → ${esc(w.predicted)}, not ${esc(w.correct)}</li>`).join("")
+        }</ul></div>` : ""}
+        <div class="cost">${s.tokens_in} in · ${s.tokens_out} out</div>
+      </div>
+    </div>`).join("");
+
+  const ending = { verified: "Verified — rulebook saved to rulebook.json.",
+                   no_progress: "Stopped: the rulebook stopped changing.",
+                   step_cap: "Stopped: hit the step cap. Rulebook saved anyway." }[d.outcome];
+
+  out.innerHTML = steps + `<div class="total ${d.outcome === "verified" ? "ok" : ""}">${ending}<br>
+    <span style="color:var(--dim)">Total ${d.tokens_in} input · ${d.tokens_out} output tokens
+    across ${d.trace.length} step(s).</span></div>`;
+}
+
+document.getElementById("check").onclick = async () => {
+  const n = document.getElementById("narration").value.trim();
+  if (!n) return;
+  const res = await fetch("/categorise?narration=" + encodeURIComponent(n));
+  const d = await res.json();
+  document.getElementById("answer").innerHTML = d.category
+    ? `${esc(d.category)}<small>0 tokens — the rulebook ran locally.</small>`
+    : `<span style="color:var(--fail)">${esc(d.note)}</span>`;
+};
+</script>
+</body>
+</html>

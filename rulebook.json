@@ -1,0 +1,430 @@
+[
+  {
+    "keyword": "AMAZON PRIME",
+    "category": "Entertainment"
+  },
+  {
+    "keyword": "SWIGGY INSTAMART",
+    "category": "Groceries"
+  },
+  {
+    "keyword": "BLINKIT",
+    "category": "Groceries"
+  },
+  {
+    "keyword": "ZEPTO",
+    "category": "Groceries"
+  },
+  {
+    "keyword": "DUNZO",
+    "category": "Groceries"
+  },
+  {
+    "keyword": "BBD MART",
+    "category": "Groceries"
+  },
+  {
+    "keyword": "GROFERS",
+    "category": "Groceries"
+  },
+  {
+    "keyword": "BIG BASKET",
+    "category": "Groceries"
+  },
+  {
+    "keyword": "NATURE'S BASKET",
+    "category": "Groceries"
+  },
+  {
+    "keyword": "AMAZON FRESH",
+    "category": "Groceries"
+  },
+  {
+    "keyword": "POS BIGBASKET",
+    "category": "Groceries"
+  },
+  {
+    "keyword": "ZOMATO",
+    "category": "Food"
+  },
+  {
+    "keyword": "SWIGGY",
+    "category": "Food"
+  },
+  {
+    "keyword": "UBER EATS",
+    "category": "Food"
+  },
+  {
+    "keyword": "DOMINOS",
+    "category": "Food"
+  },
+  {
+    "keyword": "MCDONALDS",
+    "category": "Food"
+  },
+  {
+    "keyword": "KFC",
+    "category": "Food"
+  },
+  {
+    "keyword": "BURGER KING",
+    "category": "Food"
+  },
+  {
+    "keyword": "PIZZA HUT",
+    "category": "Food"
+  },
+  {
+    "keyword": "SUBWAY",
+    "category": "Food"
+  },
+  {
+    "keyword": "STARBUCKS",
+    "category": "Food"
+  },
+  {
+    "keyword": "CAFE COFFEE DAY",
+    "category": "Food"
+  },
+  {
+    "keyword": "THIRD WAVE COFFEE",
+    "category": "Food"
+  },
+  {
+    "keyword": "CHAI POINT",
+    "category": "Food"
+  },
+  {
+    "keyword": "HALDIRAMS",
+    "category": "Food"
+  },
+  {
+    "keyword": "BIKANERVALA",
+    "category": "Food"
+  },
+  {
+    "keyword": "NIRULA'S",
+    "category": "Food"
+  },
+  {
+    "keyword": "UBER",
+    "category": "Transport"
+  },
+  {
+    "keyword": "OLA CABS",
+    "category": "Transport"
+  },
+  {
+    "keyword": "OLA",
+    "category": "Transport"
+  },
+  {
+    "keyword": "MERU CABS",
+    "category": "Transport"
+  },
+  {
+    "keyword": "RAPIDO",
+    "category": "Transport"
+  },
+  {
+    "keyword": "NAMMA METRO",
+    "category": "Transport"
+  },
+  {
+    "keyword": "BMRCL RECHARGE",
+    "category": "Transport"
+  },
+  {
+    "keyword": "GOIBIBO",
+    "category": "Travel"
+  },
+  {
+    "keyword": "MAKE MY TRIP",
+    "category": "Travel"
+  },
+  {
+    "keyword": "MAKEMYTRIP",
+    "category": "Travel"
+  },
+  {
+    "keyword": "CLEARTRIP",
+    "category": "Travel"
+  },
+  {
+    "keyword": "YATRA",
+    "category": "Travel"
+  },
+  {
+    "keyword": "AIR INDIA",
+    "category": "Travel"
+  },
+  {
+    "keyword": "INDIGO",
+    "category": "Travel"
+  },
+  {
+    "keyword": "SPICEJET",
+    "category": "Travel"
+  },
+  {
+    "keyword": "VISTARA",
+    "category": "Travel"
+  },
+  {
+    "keyword": "IRCTC",
+    "category": "Travel"
+  },
+  {
+    "keyword": "OYO ROOMS",
+    "category": "Travel"
+  },
+  {
+    "keyword": "AMAZON",
+    "category": "Shopping"
+  },
+  {
+    "keyword": "FLIPKART",
+    "category": "Shopping"
+  },
+  {
+    "keyword": "MYNTRA",
+    "category": "Shopping"
+  },
+  {
+    "keyword": "AJIO",
+    "category": "Shopping"
+  },
+  {
+    "keyword": "MEESHO",
+    "category": "Shopping"
+  },
+  {
+    "keyword": "NYKAA",
+    "category": "Shopping"
+  },
+  {
+    "keyword": "DECATHLON",
+    "category": "Shopping"
+  },
+  {
+    "keyword": "UNIQLO",
+    "category": "Shopping"
+  },
+  {
+    "keyword": "H&M",
+    "category": "Shopping"
+  },
+  {
+    "keyword": "FOREVER 21",
+    "category": "Shopping"
+  },
+  {
+    "keyword": "ZARA",
+    "category": "Shopping"
+  },
+  {
+    "keyword": "AJANTA PHARMA",
+    "category": "Health"
+  },
+  {
+    "keyword": "NETMEDS",
+    "category": "Health"
+  },
+  {
+    "keyword": "1MG",
+    "category": "Health"
+  },
+  {
+    "keyword": "PHARMEASY",
+    "category": "Health"
+  },
+  {
+    "keyword": "MEDLIFE",
+    "category": "Health"
+  },
+  {
+    "keyword": "APOLLO PHARMACY",
+    "category": "Health"
+  },
+  {
+    "keyword": "FORTIS HOSPITAL",
+    "category": "Health"
+  },
+  {
+    "keyword": "MAX HEALTHCARE",
+    "category": "Health"
+  },
+  {
+    "keyword": "PRACTO",
+    "category": "Health"
+  },
+  {
+    "keyword": "CULT FIT",
+    "category": "Health"
+  },
+  {
+    "keyword": "NETFLIX",
+    "category": "Entertainment"
+  },
+  {
+    "keyword": "HOTSTAR",
+    "category": "Entertainment"
+  },
+  {
+    "keyword": "SONY LIV",
+    "category": "Entertainment"
+  },
+  {
+    "keyword": "ZEE5",
+    "category": "Entertainment"
+  },
+  {
+    "keyword": "VOOT",
+    "category": "Entertainment"
+  },
+  {
+    "keyword": "ALT BALAJI",
+    "category": "Entertainment"
+  },
+  {
+    "keyword": "YOUTUBE",
+    "category": "Entertainment"
+  },
+  {
+    "keyword": "SPOTIFY",
+    "category": "Entertainment"
+  },
+  {
+    "keyword": "BOOKMYSHOW",
+    "category": "Entertainment"
+  },
+  {
+    "keyword": "PVR CINEMAS",
+    "category": "Entertainment"
+  },
+  {
+    "keyword": "AIRTEL",
+    "category": "Bills"
+  },
+  {
+    "keyword": "JIOPREPAID",
+    "category": "Bills"
+  },
+  {
+    "keyword": "JIO",
+    "category": "Bills"
+  },
+  {
+    "keyword": "VODAFONE",
+    "category": "Bills"
+  },
+  {
+    "keyword": "VI",
+    "category": "Bills"
+  },
+  {
+    "keyword": "BSNL",
+    "category": "Bills"
+  },
+  {
+    "keyword": "ELECTRICITY BOARD",
+    "category": "Bills"
+  },
+  {
+    "keyword": "DISCOMS",
+    "category": "Bills"
+  },
+  {
+    "keyword": "WATER BOARD",
+    "category": "Bills"
+  },
+  {
+    "keyword": "GAS AGENCY",
+    "category": "Bills"
+  },
+  {
+    "keyword": "BESCOM",
+    "category": "Bills"
+  },
+  {
+    "keyword": "ACT FIBERNET",
+    "category": "Bills"
+  },
+  {
+    "keyword": "BWSSB",
+    "category": "Bills"
+  },
+  {
+    "keyword": "TATA POWER",
+    "category": "Bills"
+  },
+  {
+    "keyword": "SHELL",
+    "category": "Fuel"
+  },
+  {
+    "keyword": "RELIANCE FUEL",
+    "category": "Fuel"
+  },
+  {
+    "keyword": "BP FUEL",
+    "category": "Fuel"
+  },
+  {
+    "keyword": "HINDUSTAN PETROL",
+    "category": "Fuel"
+  },
+  {
+    "keyword": "FUEL STATION",
+    "category": "Fuel"
+  },
+  {
+    "keyword": "PETROL PUMP",
+    "category": "Fuel"
+  },
+  {
+    "keyword": "BHARAT PETROLEUM",
+    "category": "Fuel"
+  },
+  {
+    "keyword": "CARD ANNUAL FEE",
+    "category": "Fees"
+  },
+  {
+    "keyword": "ANNUAL FEE PLUS GST",
+    "category": "Fees"
+  },
+  {
+    "keyword": "CARD FEE",
+    "category": "Fees"
+  },
+  {
+    "keyword": "JOINING FEE",
+    "category": "Fees"
+  },
+  {
+    "keyword": "ANNUAL CHARGES",
+    "category": "Fees"
+  },
+  {
+    "keyword": "BANKING CHARGES",
+    "category": "Fees"
+  },
+  {
+    "keyword": "ATM CHARGES",
+    "category": "Fees"
+  },
+  {
+    "keyword": "ATM CASH WITHDRAWAL",
+    "category": "Fees"
+  },
+  {
+    "keyword": "LATE PAYMENT CHARGE",
+    "category": "Fees"
+  },
+  {
+    "keyword": "FOREX MARKUP FEE",
+    "category": "Fees"
+  }
+]
