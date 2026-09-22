@@ -1,0 +1,10 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Office lock files, created while a document is open in Word
+~$*
+
+# Local archives
+*.zip
